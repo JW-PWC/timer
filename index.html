@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tool Countdown · May 16, 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0a0a0a;
+      --bg-secondary: #141414;
+      --border:       #2a2a2a;
+      --border-dim:   #1e1e1e;
+      --text:         #f0ece4;
+      --text-dim:     #7a7570;
+      --amber:        #BA7517;
+      --amber-bright: #d4882a;
+      --radius:       16px;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, 'Times New Roman', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* subtle grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .tw {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 2rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* date row */
+    .hdr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+    .ic { color: var(--amber); flex-shrink: 0; }
+
+    .sub {
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* title */
+    .ttl {
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 400;
+      color: var(--text);
+      margin: 12px 0 2.5rem;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .ttl em {
+      color: var(--amber-bright);
+      font-style: italic;
+    }
+
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 700px;
+      margin: 0 auto 1.75rem;
+    }
+
+    .unit {
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.5rem 0.75rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.5s;
+    }
+    .unit.amber-border { border-color: var(--amber); }
+
+    .uic { color: var(--amber); }
+
+    .num {
+      font-size: clamp(52px, 8vw, 86px);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.03em;
+      font-family: Georgia, serif;
+    }
+    .num.pop { animation: pop 0.15s ease-out; }
+
+    .lbl {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* footer quip */
+    .ftr {
+      font-size: clamp(14px, 2vw, 18px);
+      color: var(--text-dim);
+      min-height: 26px;
+      transition: opacity 0.4s;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.05em;
+    }
+
+    .done {
+      font-weight: 500;
+      color: var(--amber-bright);
+      font-size: clamp(16px, 2.5vw, 22px);
+    }
+
+    /* amber glow line under title */
+    .glow-line {
+      width: 60px;
+      height: 2px;
+      background: var(--amber);
+      margin: 0 auto 2.5rem;
+      border-radius: 2px;
+      box-shadow: 0 0 12px var(--amber);
+    }
+
+    @keyframes pop {
+      0%  { transform: scale(1.18); color: var(--amber-bright); }
+      100%{ transform: scale(1);    color: var(--text); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="tw">
+  <div class="hdr">
+    <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </svg>
+    <p class="sub">Saturday · May 16, 2026</p>
+    <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </svg>
+  </div>
+
+  <p class="ttl">Time to <em>Tool Up!</em></p>
+  <div class="glow-line"></div>
+
+  <div class="grid">
+    <!-- Days -->
+    <div class="unit" id="u-days">
+      <svg class="uic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+      <div id="days" class="num">0</div>
+      <div class="lbl">Days</div>
+    </div>
+
+    <!-- Hours -->
+    <div class="unit" id="u-hrs">
+      <svg class="uic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+        <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+        <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+        <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+      </svg>
+      <div id="hours" class="num">00</div>
+      <div class="lbl">Hours</div>
+    </div>
+
+    <!-- Mins -->
+    <div class="unit" id="u-mins">
+      <svg class="uic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </svg>
+      <div id="mins" class="num">00</div>
+      <div class="lbl">Mins</div>
+    </div>
+
+    <!-- Secs -->
+    <div class="unit" id="u-secs">
+      <svg class="uic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <g id="gear-g">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </g>
+      </svg>
+      <div id="secs" class="num">00</div>
+      <div class="lbl">Secs</div>
+    </div>
+  </div>
+
+  <p id="ftr" class="ftr">Get your toolbox ready...</p>
+</div>
+
+<script>
+  const target = new Date(2026, 4, 16, 0, 0, 0);
+  const quips = [
+    "Get your toolbox ready...",
+    "Tighten those bolts — it's almost time!",
+    "Hammer time is nearly here!",
+    "The gears are definitely turning.",
+    "Wrench yourself to Saturday!",
+    "Don't drill — just wait.",
+    "Measure twice, countdown once.",
+    "Screwing up the anticipation!",
+    "Level-headed and ready to go.",
+    "Nailing every second..."
+  ];
+  let qi = 0;
+  const ftr = document.getElementById('ftr');
+  setInterval(() => {
+    qi = (qi + 1) % quips.length;
+    ftr.style.opacity = 0;
+    setTimeout(() => { ftr.textContent = quips[qi]; ftr.style.opacity = 1; }, 400);
+  }, 4000);
+
+  const gearG = document.getElementById('gear-g');
+  let deg = 0;
+  let lastSec = -1;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) {
+      ['days','hours','mins','secs'].forEach(id => {
+        document.getElementById(id).textContent = id === 'days' ? '0' : '00';
+      });
+      ftr.innerHTML = '<span class="done">Saturday is here — tools down!</span>';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('days').textContent  = d;
+    document.getElementById('hours').textContent = pad(h);
+    document.getElementById('mins').textContent  = pad(m);
+
+    const secEl = document.getElementById('secs');
+    secEl.textContent = pad(s);
+    if (s !== lastSec) {
+      secEl.classList.remove('pop');
+      void secEl.offsetWidth;
+      secEl.classList.add('pop');
+      lastSec = s;
+      deg = (deg + 6) % 360;
+      gearG.style.transform = `rotate(${deg}deg)`;
+      gearG.style.transformOrigin = '12px 12px';
+    }
+
+    const uDays = document.getElementById('u-days');
+    if (d <= 1) uDays.classList.add('amber-border');
+    else uDays.classList.remove('amber-border');
+  }
+
+  update();
+  setInterval(update, 300);
+</script>
+</body>
+</html>
